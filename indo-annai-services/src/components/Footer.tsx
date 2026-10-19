@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n";
 import { translations } from "@/lib/i18n";
+import Image from "next/image";
 
 export default function Footer({ locale }: { locale: Locale }) {
   const t = translations[locale];
@@ -10,7 +11,20 @@ export default function Footer({ locale }: { locale: Locale }) {
       <div className="container footer-grid">
         <div>
           <Link href={`/${locale}`} className="footer-brand">
-            INDO ANNAI SERVICES
+            <Image
+              src="/images/logo.png"
+              alt="INDO ANNAI SERVICES"
+              width={180}
+              height={60}
+              priority
+              className="brand-logo"
+              style={{
+                backgroundColor: "#ffffff",
+                padding: "6px 12px",
+                borderRadius: "6px",
+                objectFit: "contain",
+              }}
+            />
           </Link>
           <p>{t.footer}</p>
         </div>
