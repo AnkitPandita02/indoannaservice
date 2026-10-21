@@ -1,4 +1,3 @@
-
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { locales, type Locale } from "@/lib/i18n";
@@ -39,25 +38,21 @@ export default async function ContactPage({
         </div>
 
         <div className="detail-panel contact-panel">
-          <span className="eyebrow">
-            {ja ? "担当者" : "YOUR CONTACT"}
-          </span>
+          <span className="eyebrow">{ja ? "担当者" : "YOUR CONTACT"}</span>
 
           <h2>Surender Gupta</h2>
           <p>{ja ? "英語・日本語対応" : "English & Japanese speaking"}</p>
 
           <div className="contact-detail">
             <span>Email</span>
-            <a href="mailto:Surender.gupta@indoannai.com">
-              Surender.gupta@indoannai.com
+            <a href="mailto:surender.gupta@indoannaiservice.com">
+              surender.gupta@indoannaiservice.com
             </a>
           </div>
 
           <div className="contact-detail">
             <span>Phone</span>
-            <a href="tel:+919625578934">
-              +91 96255 78934
-            </a>
+            <a href="tel:+919625578934">+91 96255 78934</a>
           </div>
 
           <div className="contact-detail">
@@ -66,7 +61,7 @@ export default async function ContactPage({
           </div>
 
           <a
-            href="mailto:Surender.gupta@indoannai.com?subject=INDO%20ANNAI%20SERVICES%20Enquiry"
+            href="mailto:surender.gupta@indoannaiservice.com?subject=INDO%20ANNAI%20SERVICES%20Enquiry"
             className="button button-primary"
           >
             {ja ? "メールで問い合わせる" : "Send an Email"} ↗

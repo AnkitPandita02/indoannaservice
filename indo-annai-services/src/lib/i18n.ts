@@ -12,6 +12,7 @@ export const translations = {
       about: "About Us",
       services: "Services",
       tours: "India Tours",
+      gallery: "Gallery",
       lessons: "Japanese Lessons",
       contact: "Contact",
     },
@@ -43,6 +44,7 @@ export const translations = {
     viewTours: "Explore Tours",
     footer: "Connecting Japan and India through service and understanding.",
   },
+
   ja: {
     brand: "インド・案内・サービス",
     tagline: "インドでの日本語ニーズを幅広くサポート",
@@ -51,6 +53,7 @@ export const translations = {
       about: "会社概要",
       services: "サービス",
       tours: "インドツアー",
+      gallery: "ギャラリー",
       lessons: "日本語レッスン",
       contact: "お問い合わせ",
     },

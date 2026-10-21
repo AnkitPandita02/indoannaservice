@@ -10,6 +10,7 @@ export default function Header({ locale }: { locale: Locale }) {
   const navItems = [
     { href: "", label: t.nav.home },
     { href: "/about", label: t.nav.about },
+    { href: `/gallery`, label: t.nav.gallery },
     { href: "/services", label: t.nav.services },
     { href: "/tours", label: t.nav.tours },
     { href: "/japanese-lessons", label: t.nav.lessons },

@@ -38,8 +38,8 @@ export default function Footer({ locale }: { locale: Locale }) {
 
         <div>
           <h3>{t.nav.contact}</h3>
-          <a href="mailto:Surender.gupta@indoannai.com">
-            Surender.gupta@indoannai.com
+          <a href="mailto:surender.gupta@indoannaiservice.com">
+            surender.gupta@indoannaiservice.com
           </a>
           <a href="tel:+919625578934">+91 96255 78934</a>
           <a href="https://indoannai.com">indoannai.com</a>

@@ -1,14 +1,8 @@
-
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ServiceCard from "@/components/ServiceCard";
-import {
-  locales,
-  translations,
-  serviceItems,
-  type Locale,
-} from "@/lib/i18n";
+import { locales, translations, serviceItems, type Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
   params,
@@ -62,9 +56,7 @@ export default async function HomePage({
             </span>
 
             <h1>{t.hero.title}</h1>
-            <p className="hero-description">
-              {t.hero.description}
-            </p>
+            <p className="hero-description">{t.hero.description}</p>
 
             <div className="hero-actions">
               <Link
@@ -84,9 +76,7 @@ export default async function HomePage({
 
             <div className="hero-note">
               <span className="hero-note-icon">✓</span>
-              <span>
-                Japanese-language support for travel and business
-              </span>
+              <span>Japanese-language support for travel and business</span>
             </div>
           </div>
 
@@ -127,10 +117,7 @@ export default async function HomePage({
 
           <div className="about-copy">
             <p>{t.about.description}</p>
-            <Link
-              href={`/${currentLocale}/about`}
-              className="text-link"
-            >
+            <Link href={`/${currentLocale}/about`} className="text-link">
               {t.learnMore} <span>↗</span>
             </Link>
           </div>
@@ -157,18 +144,11 @@ export default async function HomePage({
           <div className="section-heading">
             <div>
               <span className="eyebrow">WHAT WE DO</span>
-              <h2 className="section-title">
-                {t.servicesTitle}
-              </h2>
-              <p className="section-description">
-                {t.servicesDescription}
-              </p>
+              <h2 className="section-title">{t.servicesTitle}</h2>
+              <p className="section-description">{t.servicesDescription}</p>
             </div>
 
-            <Link
-              href={`/${currentLocale}/services`}
-              className="text-link"
-            >
+            <Link href={`/${currentLocale}/services`} className="text-link">
               {t.learnMore} <span>↗</span>
             </Link>
           </div>
@@ -190,23 +170,24 @@ export default async function HomePage({
         <div className="container tours-grid">
           <div className="tour-visual">
             <div className="tour-image" />
-            <div className="tour-label">
+            {/* <div className="tour-label">
               INDIA, BEYOND THE ORDINARY
-            </div>
+            </div> */}
           </div>
 
           <div className="tour-copy">
             <span className="eyebrow">YOUR JOURNEY, YOUR WAY</span>
             <h2 className="section-title">{t.toursTitle}</h2>
-            <p className="section-description">
-              {t.toursDescription}
-            </p>
+            <p className="section-description">{t.toursDescription}</p>
 
             <ul className="tour-list">
               <li>Delhi · Jaipur · Agra — Golden Triangle</li>
               <li>Delhi · Agra · Varanasi — Heritage & Spirituality</li>
               <li>Delhi · Haridwar · Rishikesh — Nature & Yoga</li>
               <li>Amritsar · Dharamshala — Culture & Mountains</li>
+              <li>Rajasthan — Royal Rajasthan · Culture & Folk Art</li>
+              <li>South India — Tradition & Scenery</li>
+              <li>Darjeeling & the Himalayas — Gardens of Tea</li>
             </ul>
 
             <Link
