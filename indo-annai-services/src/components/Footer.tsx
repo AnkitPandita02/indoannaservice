@@ -111,7 +111,7 @@ export default function Footer({ locale }: { locale: Locale }) {
       </div>
 
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} INDO ANNAI SERVICES</span>
+        <span>© 2026 INDO ANNAI SERVICES</span>
 
         <span>India · 日本</span>
       </div>
