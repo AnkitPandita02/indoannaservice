@@ -1,230 +1,267 @@
+
 "use client";
 
-import { use } from "react";
+import { use, useEffect, useState } from "react";
 import Image from "next/image";
 
 type Locale = "en" | "ja";
 
-const images = [
-  {
-    src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.36 (1).jpeg",
-    alt: "India travel photography",
-  },
-  {
-    src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.36 (2).jpeg",
-    alt: "Indian destinations and culture",
-  },
+type GalleryImage = {
+  src: string;
+  title: string;
+  alt: string;
+};
+
+const images: GalleryImage[] = [
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.36.jpeg",
-    alt: "Memorable experiences in India",
+    title: "Memories in India",
+    alt: "Travel memories in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.37 (1).jpeg",
-    alt: "Indian travel photography",
+    title: "Jatayu Earth's Center Nature Park in Chadayamangalam, Kollam district, Kerala,",
+    alt: "Travelers exploring India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.37 (2).jpeg",
+    title: " Hawa Mahal (Palace of the Winds) Jaipur, Rajasthan",
     alt: "Indian heritage and architecture",
   },
-
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.38.jpeg",
+    title: "Har Ki Pauri ghat in Haridwar, Uttarakhand, India",
     alt: "Travel experiences in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.39 (1).jpeg",
+    title: "Indian Culture",
     alt: "Indian culture and traditions",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.39 (2).jpeg",
-    alt: "Discover India",
+    title: "Discover India",
+    alt: "Discovering India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.39.jpeg",
-    alt: "India sightseeing",
+    title: "Ashta Sakthi Mandapam inside the Meenakshi Amman Temple in Madurai, Tamil Nadu",
+    alt: "Sightseeing during a trip to India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.40 (1).jpeg",
-    alt: "Indian travel destinations",
+    title: "Jaisalmer Fort in Rajasthan",
+    alt: "Travel destinations in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.40 (2).jpeg",
+    title: "Sam Sand Dunes in Jaisalmer, Rajasthan",
     alt: "Indian culture and heritage",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.40.jpeg",
+    title: " Jatayu Earth's Center Nature Park in Chadayamangalam, Kollam district, Kerala",
     alt: "Memorable moments in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.41 (1).jpeg",
-    alt: "India tourism",
+    title: "Taj Mahal in Agra",
+    alt: "Tourism in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.41 (2).jpeg",
-    alt: "Indian architecture and culture",
+    title: "Indian Architecture",
+    alt: "Indian architecture",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.41.jpeg",
-    alt: "Exploring India",
+    title: "Exploring India",
+    alt: "Exploring destinations in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.42.jpeg",
-    alt: "Indian travel memories",
+    title: "Travel Memories",
+    alt: "Travel memories from India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.43.jpeg",
-    alt: "Indian destinations and experiences",
+    title: "Beautiful India",
+    alt: "Beautiful destinations in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.44 (1).jpeg",
+    title: "Indian Heritage",
     alt: "Indian heritage",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.44.jpeg",
+    title: "Beautiful Places",
     alt: "Beautiful places in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.45 (1).jpeg",
+    title: "India Adventures",
     alt: "Travel and tourism in India",
   },
   {
-    src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.45.jpeg",
-    alt: "Indian cultural experiences",
-  },
-  {
-    src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.46.jpeg",
-    alt: "India sightseeing and travel",
-  },
-  {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.47.jpeg",
+    title: "Indian Landscapes",
     alt: "Indian landscapes",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.48 (1).jpeg",
-    alt: "Indian travel photography",
+    title: "Travel Photography",
+    alt: "Travel photography in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.48.jpeg",
-    alt: "Explore India's destinations",
+    title: "Discover India",
+    alt: "Discover India's destinations",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.49 (1).jpeg",
+    title: "Culture and Sightseeing",
     alt: "Indian culture and sightseeing",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.49 (2).jpeg",
+    title: "Travel Memories",
     alt: "Travel memories in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.49.jpeg",
-    alt: "India tourism experiences",
+    title: "India Experiences",
+    alt: "Tourism experiences in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.50 (1).jpeg",
+    title: "Indian Destinations",
     alt: "Indian destinations and heritage",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.50 (2).jpeg",
-    alt: "Discover India's culture",
+    title: "Indian Culture",
+    alt: "Indian culture and traditions",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.50.jpeg",
+    title: "Sightseeing Experiences",
     alt: "Indian sightseeing experiences",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.51 (1).jpeg",
-    alt: "Indian travel memories",
+    title: "Travel Memories",
+    alt: "Travel memories in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.51 (2).jpeg",
+    title: "Indian Traditions",
     alt: "Indian heritage and traditions",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.51.jpeg",
-    alt: "Explore India",
+    title: "Explore India",
+    alt: "Exploring India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.52 (1).jpeg",
+    title: "Cultural Destinations",
     alt: "Indian cultural destinations",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.52 (2).jpeg",
-    alt: "India travel experiences",
+    title: "India Travel",
+    alt: "Travel experiences in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.52.jpeg",
+    title: "Beautiful Destinations",
     alt: "Beautiful destinations in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.53 (1).jpeg",
+    title: "Indian Tourism",
     alt: "Indian tourism and culture",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.53 (2).jpeg",
+    title: "Traditions and Heritage",
     alt: "Indian traditions and heritage",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.53 (3).jpeg",
+    title: "Travel Experiences",
     alt: "Memorable travel experiences",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.53.jpeg",
+    title: "India Travel",
     alt: "India travel photography",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.54 (1).jpeg",
+    title: "Cultural Experiences",
     alt: "Indian cultural experiences",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.54 (2).jpeg",
+    title: "Indian Heritage",
     alt: "Discover Indian heritage",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.54.jpeg",
+    title: "Indian Landscapes",
     alt: "Indian destinations and landscapes",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.55 (1).jpeg",
-    alt: "India sightseeing",
+    title: "India Sightseeing",
+    alt: "Sightseeing in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.55 (2).jpeg",
+    title: "Travel and Culture",
     alt: "Indian travel and culture",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.55.jpeg",
+    title: "Travel Experiences",
     alt: "Travel experiences in India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.56 (1).jpeg",
+    title: "Cultural Heritage",
     alt: "Indian cultural heritage",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.56.jpeg",
+    title: "Explore India",
     alt: "Explore India",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.57.jpeg",
+    title: "India Photography",
     alt: "Indian travel photography",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.58 (1).jpeg",
+    title: "Tourism Destinations",
     alt: "Indian tourism destinations",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.58.jpeg",
+    title: "Culture and Traditions",
     alt: "Indian culture and traditions",
   },
-  {
-    src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.59 (1).jpeg",
-    alt: "Memorable experiences in India",
-  },
+
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.59 (2).jpeg",
+    title: "Indian Destinations",
     alt: "Indian travel destinations",
   },
   {
     src: "/images/gallery/WhatsApp Image 2026-10-16 at 20.12.59.jpeg",
+    title: "Indian Heritage",
     alt: "India sightseeing and heritage",
   },
 ];
@@ -235,11 +272,14 @@ const copy = {
     title: "Memories made in India.",
     description:
       "Explore India's beautiful destinations, traditions, and unforgettable experiences.",
+    close: "Close image viewer",
   },
   ja: {
     eyebrow: "フォトギャラリー",
     title: "インドで生まれる、特別な思い出。",
-    description: "インドの美しい観光地、伝統文化、心に残る体験をご紹介します。",
+    description:
+      "インドの美しい観光地、伝統文化、心に残る体験をご紹介します。",
+    close: "画像を閉じる",
   },
 };
 
@@ -252,6 +292,29 @@ export default function GalleryPage({
 
   const locale: Locale = routeLocale === "ja" ? "ja" : "en";
   const t = copy[locale];
+
+  const [selectedImage, setSelectedImage] =
+    useState<GalleryImage | null>(null);
+
+  useEffect(() => {
+    if (!selectedImage) return;
+
+    const previousOverflow = document.body.style.overflow;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedImage]);
 
   return (
     <>
@@ -267,20 +330,66 @@ export default function GalleryPage({
         <div className="container">
           <div className="gallery-grid">
             {images.map((image) => (
-              <div className="gallery-card" key={image.src}>
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={700}
-                  height={520}
-                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-                  className="gallery-image"
-                />
-              </div>
+              <button
+                className="gallery-card"
+                key={image.src}
+                type="button"
+                onClick={() => setSelectedImage(image)}
+                aria-label={`Open image: ${image.title}`}
+              >
+                <div className="gallery-card-image">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={700}
+                    height={520}
+                    sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                    className="gallery-image"
+                  />
+                </div>
+
+                <span className="gallery-card-title">{image.title}</span>
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      {selectedImage && (
+        <div
+          className="gallery-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedImage.title}
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="gallery-close"
+            type="button"
+            aria-label={t.close}
+            onClick={() => setSelectedImage(null)}
+          >
+            &times;
+          </button>
+
+          <div
+            className="gallery-lightbox-content"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <Image
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              width={1600}
+              height={1200}
+              sizes="100vw"
+              className="gallery-lightbox-image"
+            />
+            <p className="gallery-lightbox-title">
+              {selectedImage.title}
+            </p>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -2,6 +2,7 @@
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 import { locales, type Locale } from "@/lib/i18n";
 
 export function generateStaticParams() {
@@ -28,6 +29,7 @@ export default async function LocaleLayout({
       <Header locale={currentLocale} />
       <main>{children}</main>
       <Footer locale={currentLocale} />
+      <FloatingContact />
     </>
   );
 }
