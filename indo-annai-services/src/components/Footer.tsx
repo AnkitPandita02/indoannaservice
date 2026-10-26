@@ -100,13 +100,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             surender.gupta@indoannaiservice.com
           </a>
           <a href="tel:+919625578934">+91 96255 78934</a>
-          <a
-            href="https://indoannai.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            indoannai.com
-          </a>
+          
         </div>
       </div>
 
