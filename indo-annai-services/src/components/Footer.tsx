@@ -67,7 +67,7 @@ export default function Footer({ locale }: { locale: Locale }) {
           <Link href={`/${locale}`} className="footer-brand">
             <Image
               src="/images/logo.png"
-              alt="INDO ANNAI SERVICES"
+              alt="NDO ANNAI SERVICE"
               width={180}
               height={60}
               className="brand-logo"
@@ -91,7 +91,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Follow INDO ANNAI SERVICES on ${social.name}`}
+                  aria-label={`Follow NDO ANNAI SERVICE on ${social.name}`}
                   title={social.name}
                   className="footer-social-link"
                 >
@@ -120,7 +120,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             href="https://share.google/zF33F38L7UL4kvpSI"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="View INDO ANNAI SERVICES address on Google Maps"
+            aria-label="View NDO ANNAI SERVICE address on Google Maps"
             className="footer-address"
           >
             Plot No. D-361-362 KH No. 185, 3rd Floor
@@ -134,7 +134,7 @@ export default function Footer({ locale }: { locale: Locale }) {
       </div>
 
       <div className="container footer-bottom">
-        <span>© 2026 INDO ANNAI SERVICES</span>
+        <span>© 2026 NDO ANNAI SERVICE</span>
 
         <span>India · 日本</span>
       </div>

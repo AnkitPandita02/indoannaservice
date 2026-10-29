@@ -1,13 +1,7 @@
-
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  locales,
-  translations,
-  serviceItems,
-  type Locale,
-} from "@/lib/i18n";
+import { locales, translations, serviceItems, type Locale } from "@/lib/i18n";
 
 const serviceDetails = {
   en: {
@@ -104,8 +98,7 @@ const serviceDetails = {
     },
     "hotels-accommodation": {
       title: "ホテル・サービスアパートメント",
-      description:
-        "インドを訪れる日本人旅行者や駐在員向けの宿泊サポート。",
+      description: "インドを訪れる日本人旅行者や駐在員向けの宿泊サポート。",
       points: [
         "日本式・国際式の宿泊施設",
         "長期滞在向け住居の手配",
@@ -115,8 +108,7 @@ const serviceDetails = {
     },
     "car-services": {
       title: "車両・ドライバーサービス",
-      description:
-        "出張、観光、長期滞在に対応する快適な移動サービス。",
+      description: "出張、観光、長期滞在に対応する快適な移動サービス。",
       points: [
         "訓練を受けたドライバー",
         "短期・長期の車両手配",
@@ -126,8 +118,7 @@ const serviceDetails = {
     },
     "liaison-support": {
       title: "ビジネス・リエゾンサポート",
-      description:
-        "インドでのさまざまな手続きや現地調整をサポートします。",
+      description: "インドでのさまざまな手続きや現地調整をサポートします。",
       points: [
         "現地の専門家・コンサルタントの紹介",
         "調査・情報収集",
@@ -155,7 +146,7 @@ export function generateStaticParams() {
     serviceItems[locale].map((service) => ({
       locale,
       slug: service.slug,
-    }))
+    })),
   );
 }
 
@@ -196,18 +187,12 @@ export default async function ServiceDetailPage({
   return (
     <section className="section">
       <div className="container detail-layout">
-        <span className="eyebrow">INDO ANNAI SERVICES</span>
+        <span className="eyebrow">NDO ANNAI SERVICE</span>
         <h1 className="section-title">{details.title}</h1>
-        <p className="section-description">
-          {details.description}
-        </p>
+        <p className="section-description">{details.description}</p>
 
         <div className="detail-panel">
-          <h2>
-            {currentLocale === "ja"
-              ? "サービス内容"
-              : "What We Offer"}
-          </h2>
+          <h2>{currentLocale === "ja" ? "サービス内容" : "What We Offer"}</h2>
           <ul className="tour-list">
             {details.points.map((point) => (
               <li key={point}>{point}</li>
@@ -222,10 +207,7 @@ export default async function ServiceDetailPage({
           </Link>
         </div>
 
-        <Link
-          href={`/${currentLocale}/services`}
-          className="text-link"
-        >
+        <Link href={`/${currentLocale}/services`} className="text-link">
           ← {translations[currentLocale].nav.services}
         </Link>
       </div>

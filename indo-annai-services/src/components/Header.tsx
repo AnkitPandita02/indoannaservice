@@ -22,7 +22,7 @@ export default function Header({ locale }: { locale: Locale }) {
         <Link href={`/${locale}`} className="brand">
           <Image
             src="/images/logo.png"
-            alt="INDO ANNAI SERVICES"
+            alt="NDO ANNAI SERVICE"
             width={180}
             height={60}
             priority

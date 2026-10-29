@@ -1,4 +1,3 @@
-
 import { notFound } from "next/navigation";
 import InfoPage from "@/components/InfoPage";
 import { locales, type Locale } from "@/lib/i18n";
@@ -25,7 +24,7 @@ export default async function AboutPage({
       description={
         ja
           ? "インド・案内・サービスは、日本人旅行者、企業、駐在員の皆様に向けて、旅行、通訳・翻訳、宿泊、移動、語学教育、現地調整などのサービスを提供しています。言葉や文化の違いを越え、お客様一人ひとりのニーズに合わせたサポートを目指しています。"
-          : "INDO ANNAI SERVICES supports Japanese visitors, businesses, and expatriates in India. Our services include customized travel, interpretation, translation, accommodation, transportation, Japanese language education, and local coordination. We focus on understanding each client's needs and helping them navigate India with confidence."
+          : "NDO ANNAI SERVICE supports Japanese visitors, businesses, and expatriates in India. Our services include customized travel, interpretation, translation, accommodation, transportation, Japanese language education, and local coordination. We focus on understanding each client's needs and helping them navigate India with confidence."
       }
       items={
         ja

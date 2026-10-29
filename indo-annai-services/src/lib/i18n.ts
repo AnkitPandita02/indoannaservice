@@ -1,11 +1,10 @@
-
 export const locales = ["en", "ja"] as const;
 
 export type Locale = (typeof locales)[number];
 
 export const translations = {
   en: {
-    brand: "INDO ANNAI SERVICES",
+    brand: "NDO ANNAI SERVICE",
     tagline: "Your trusted Japanese-speaking partner in India",
     nav: {
       home: "Home",
@@ -171,8 +170,7 @@ export const serviceItems = {
     {
       slug: "japanese-lessons",
       title: "日本語教育",
-      description:
-        "JLPT N5・N4、日常会話、ビジネス日本語、通訳者育成講座。",
+      description: "JLPT N5・N4、日常会話、ビジネス日本語、通訳者育成講座。",
       icon: "学",
     },
   ],
