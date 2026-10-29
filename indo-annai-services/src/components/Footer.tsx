@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
@@ -82,6 +81,25 @@ export default function Footer({ locale }: { locale: Locale }) {
           </Link>
 
           <p>{t.footer}</p>
+          <div className="footer-social">
+            <span className="footer-social-label">Follow Us</span>
+
+            <div className="footer-social-links">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Follow INDO ANNAI SERVICES on ${social.name}`}
+                  title={social.name}
+                  className="footer-social-link"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div>
@@ -89,9 +107,7 @@ export default function Footer({ locale }: { locale: Locale }) {
           <Link href={`/${locale}/services`}>{t.nav.services}</Link>
           <Link href={`/${locale}/tours`}>{t.nav.tours}</Link>
           <Link href={`/${locale}/gallery`}>{t.nav.gallery}</Link>
-          <Link href={`/${locale}/japanese-lessons`}>
-            {t.nav.lessons}
-          </Link>
+          <Link href={`/${locale}/japanese-lessons`}>{t.nav.lessons}</Link>
         </div>
 
         <div>
@@ -100,7 +116,20 @@ export default function Footer({ locale }: { locale: Locale }) {
             surender.gupta@indoannaiservice.com
           </a>
           <a href="tel:+919625578934">+91 96255 78934</a>
-          
+          <a
+            href="https://share.google/zF33F38L7UL4kvpSI"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View INDO ANNAI SERVICES address on Google Maps"
+            className="footer-address"
+          >
+            Plot No. D-361-362 KH No. 185, 3rd Floor
+            <br />
+            Indra Park, Najafgarh New Delhi, South West Delhi
+            <br />
+            Delhi – 110043
+            <br />
+          </a>
         </div>
       </div>
 
@@ -111,25 +140,6 @@ export default function Footer({ locale }: { locale: Locale }) {
       </div>
 
       {/* Social media links at the bottom of the footer */}
-      <div className="container footer-social">
-        <span className="footer-social-label">Follow Us</span>
-
-        <div className="footer-social-links">
-          {socialLinks.map((social) => (
-            <a
-              key={social.name}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Follow INDO ANNAI SERVICES on ${social.name}`}
-              title={social.name}
-              className="footer-social-link"
-            >
-              {social.icon}
-            </a>
-          ))}
-        </div>
-      </div>
     </footer>
   );
 }
