@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   },
   description:
     "Japanese-speaking travel coordination, interpretation, translation, accommodation, business support, and Japanese lessons in India.",
-  metadataBase: new URL("https://indoannai.com"),
+  metadataBase: new URL("https://indoannaiservice.com/"),
   openGraph: {
     title: "INDO ANNAI SERVICE",
     description: "Your trusted Japanese-speaking partner in India.",
-    url: "https://indoannai.com",
+    url: "https://indoannaiservice.com/",
     siteName: "INDO ANNAI SERVICE",
     type: "website",
     locale: "en_IN",
