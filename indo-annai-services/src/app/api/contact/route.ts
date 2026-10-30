@@ -63,12 +63,12 @@ export async function POST(request: Request) {
     });
 
     await transporter.sendMail({
-      from: `"NDO ANNAI SERVICE" <${user}>`,
+      from: `"INDO ANNAI SERVICE" <${user}>`,
       to: recipient,
       replyTo: email.trim(),
       subject: `Website Enquiry: ${service.trim()}`,
       text: [
-        "New enquiry received from the NDO ANNAI SERVICE website.",
+        "New enquiry received from the INDO ANNAI SERVICE website.",
         "",
         `Name: ${name.trim()}`,
         `Email: ${email.trim()}`,

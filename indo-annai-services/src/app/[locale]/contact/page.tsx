@@ -8,7 +8,7 @@ import ContactForm from "./ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact INDO ANNAI SERVICES for travel, tours, interpretation, accommodation, business support, and Japanese lessons.",
+    "Contact IINDO ANNAI SERVICES for travel, tours, interpretation, accommodation, business support, and Japanese lessons.",
 };
 
 const LINE_URL = "https://line.me/ti/p/Awn1mKdYQv";
@@ -53,9 +53,7 @@ export default async function ContactPage({
               </span>
 
               <h2>
-                {ja
-                  ? "LINEでお気軽にご連絡ください"
-                  : "Let's connect on LINE"}
+                {ja ? "LINEでお気軽にご連絡ください" : "Let's connect on LINE"}
               </h2>
 
               <p>
@@ -90,8 +88,8 @@ export default async function ContactPage({
                 src="/images/line-qr.jpeg"
                 alt={
                   ja
-                    ? "INDO ANNAI SERVICESのLINE QRコード"
-                    : "INDO ANNAI SERVICES LINE QR code"
+                    ? "IINDO ANNAI SERVICESのLINE QRコード"
+                    : "IINDO ANNAI SERVICES LINE QR code"
                 }
                 width={240}
                 height={240}

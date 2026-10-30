@@ -4,7 +4,7 @@ export type Locale = (typeof locales)[number];
 
 export const translations = {
   en: {
-    brand: "NDO ANNAI SERVICE",
+    brand: "INDO ANNAI SERVICE",
     tagline: "Your trusted Japanese-speaking partner in India",
     nav: {
       home: "Home",

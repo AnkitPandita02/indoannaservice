@@ -187,7 +187,7 @@ export default async function ServiceDetailPage({
   return (
     <section className="section">
       <div className="container detail-layout">
-        <span className="eyebrow">NDO ANNAI SERVICE</span>
+        <span className="eyebrow">INDO ANNAI SERVICE</span>
         <h1 className="section-title">{details.title}</h1>
         <p className="section-description">{details.description}</p>
 
